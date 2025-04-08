@@ -20,7 +20,9 @@
       referrerpolicy="no-referrer"
     />
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" defer src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   </head>
   <body>
     <main id="app">
@@ -78,9 +80,9 @@
         </div>
 
         <div class="col-span-full m-col-start-1 m-col-end-13" id="gameInfoCon">
-          <div v-if="loading">
+          <div v-if="loading" class="loader-div">
             <img
-              src="images/loader.svg"
+              src="images/infinite-spinner.svg"
               alt="loading indicator"
               class="loader"
             />
