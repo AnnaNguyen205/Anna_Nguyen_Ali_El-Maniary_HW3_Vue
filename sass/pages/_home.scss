@@ -7,12 +7,22 @@ body {
   color: a.$secondaryColor2;
 }
 
+header img {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+
 h1 {
   background-color: a.$primaryColor;
   color: a.$secondaryColor1;
   padding: 20px;
   border-radius: 20px 20px 0 0;
   margin: 40px 0 20px;
+}
+
+h3 {
+  color: a.$accentColor;
 }
 
 p {
@@ -43,19 +53,27 @@ p {
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
+
+    a {
+      color: a.$primaryColor;
+      font-weight: bold;
+    }
   }
 }
 
 .game-item > span {
-  color: #d8233c;
+  color: a.$primaryColor;
   font-weight: bold;
 }
 
 .game-info {
   margin-top: 10px;
-  display: flex;
-  gap: 15px;
-  align-items: flex-start;
+  // display: flex;
+  // gap: 15px;
+  // align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  // gap: 40px 30px;
 
   .game-info-image {
     display: flex;
@@ -63,7 +81,7 @@ p {
     align-items: center;
 
     img {
-      width: 150px;
+      width: 100px;
       height: auto;
       border-radius: 4px;
     }
@@ -83,4 +101,13 @@ p {
 #gameInfoCon {
   border: 1px dashed a.$variationColor;
   padding: 3%;
+}
+
+a {
+  transition: all 0.3s ease;
+
+  &:hover {
+    // background-color: a.$accentColor;
+    transform: translateY(-3px);
+  }
 }

@@ -1,0 +1,118 @@
+@use "../abstracts" as a;
+@use "../abstracts/mixins" as m;
+
+footer {
+  $border-color: #444;
+  $hover-color: lighten(a.$accentColor, 10%);
+
+  background-color: rgba(a.$primaryColor, 0.2);
+  //   background-color: a.$primaryColor;
+  padding: 2.5rem 1rem 1.25rem 1rem;
+  margin-top: 2.5rem;
+
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.875rem;
+    margin-bottom: 1.875rem;
+    padding: 1rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .footer-section {
+    flex: 1;
+    min-width: 12.5rem;
+    padding: 1rem;
+    // margin: 1rem;
+
+    h3 {
+      margin-bottom: 0.9375rem;
+      font-family: "Oswald", sans-serif;
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 0.625rem;
+        text-align: center;
+
+        a {
+          text-decoration: none;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $hover-color;
+          }
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background-color: rgba(a.$secondaryColor2, 0.1);
+      transition: all 0.3s ease;
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        background-color: a.$accentColor;
+        transform: translateY(-3px);
+      }
+
+      // Individual icon colors on hover
+      &.fa-facebook-f:hover {
+        background-color: #3b5998;
+        color: white;
+      }
+      &.fa-twitter:hover {
+        background-color: #1da1f2;
+        color: white;
+      }
+      &.fa-instagram:hover {
+        background: linear-gradient(
+          45deg,
+          #405de6,
+          #5851db,
+          #833ab4,
+          #c13584,
+          #e1306c,
+          #fd1d1d
+        );
+        color: white;
+      }
+      &.fa-youtube:hover {
+        background-color: #ff0000;
+        color: white;
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 1.25rem;
+    border-top: 1px solid a.$secondaryColor2;
+    font-size: 0.9rem;
+    color: rgba(a.$secondaryColor2, 0.6);
+  }
+}
