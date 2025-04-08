@@ -19,7 +19,7 @@
     <main id="app">
       <h1>Fanshawe FUEL Game List</h1>
       <h2>Step into the world of epic game creators and their iconic titles</h2>
-      <p>Click on a game to learn more about it.</p>
+      <h3>Click on a game to learn more about it.</h3>
 
       <div class="game-list">
         <div v-if="loadingGames" class="loader-div">
@@ -33,13 +33,15 @@
         <div class="game-item grid-con">
           <div
             v-for="game in gamesData"
-            class="game-item-con col-span-full m-col-span-4"
+            class="game-item-con col-span-full m-col-span-4 l-col-span-3"
           >
             <h3>
               <a href="#game" @click="getGame(`${game.id}`)">{{game.title}}</a>
             </h3>
             <div class="game-info">
-              <img :src="`images/${game.game_img}`" alt="Game Image" />
+              <div class="game-info-image">
+                <img :src="`images/${game.game_img}`" alt="Game Image" />
+              </div>
 
               <div>
                 <p><span class="label">Genre: </span>{{game.genre}}</p>
@@ -61,19 +63,25 @@
             />
           </div>
           <div v-if="error">{{error}}</div>
-          <div v-if="title" id="info-box" :key="title">
-            <h2><span class="label-2">Game: </span>{{title}}</h2>
-            <img :src="`images/${game_img}`" />
+          <div v-if="title" id="info-box" :key="title" class="grid-con">
+            <h2 class="col-span-full">
+              <span class="label-2">Game: </span>{{title}}
+            </h2>
+            <div class="col-span-full m-col-span-6">
+              <img :src="`images/${game_img}`" />
+              <p><span class="label-2">Genre: </span>{{genre}}</p>
+              <p><span class="label-2">Description: </span>{{description}}</p>
+              <p><span class="label-2">Release Year: </span>{{release_year}}</p>
+            </div>
 
-            <p><span class="label-2">Genre: </span>{{genre}}</p>
-            <p><span class="label-2">Description: </span>{{description}}</p>
-            <p><span class="label-2">Release Year: </span>{{release_year}}</p>
-            <br /><br />
-
-            <h3><span class="label-2">Game Studio: </span>{{name}}</h3>
-            <img :src="`images/${studio_img}`" />
-            <p><span class="label-2">Head Quarters: </span>{{headquarters}}</p>
-            <p><span class="label-2">Founded Year: </span>{{founded_year}}</p>
+            <div class="col-span-full m-col-span-6">
+              <h3><span class="label-2">Game Studio: </span>{{name}}</h3>
+              <img :src="`images/${studio_img}`" />
+              <p>
+                <span class="label-2">Head Quarters: </span>{{headquarters}}
+              </p>
+              <p><span class="label-2">Founded Year: </span>{{founded_year}}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -238,9 +238,13 @@ p {
   gap: 15px;
   align-items: flex-start;
 }
-
-.game-info img {
-  width: 70px;
+.game-info .game-info-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.game-info .game-info-image img {
+  width: 150px;
   height: auto;
   border-radius: 4px;
 }
