@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fanshawe FUEL Game List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/grid.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Fanshawe FUEL Game List</h1>
+      <h2>Step into the world of epic game creators and their iconic titles</h2>
+      <p>Click on a game to learn more about it.</p>
+
+      <div class="game-list">
+        <div v-if="loadingGames" class="loader-div">
+          <img
+            src="images/infinite-spinner.svg"
+            alt="loading indicator"
+            class="loader"
+          />
+        </div>
+
+        <div class="game-item grid-con">
+          <div
+            v-for="game in gamesData"
+            class="game-item-con col-span-full m-col-span-4"
+          >
+            <h3>
+              <a href="#game" @click="getGame(`${game.id}`)">{{game.title}}</a>
+            </h3>
+            <div class="game-info">
+              <img :src="`images/${game.game_img}`" alt="Game Image" />
+
+              <div>
+                <p><span class="label">Genre: </span>{{game.genre}}</p>
+                <p>
+                  <span class="label">Release Year: </span>{{game.release_year}}
+                </p>
+                <p><span class="label">Game Studio: </span>{{game.name}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-full m-col-start-1 m-col-end-13" id="gameInfoCon">
+          <div v-if="loading">
+            <img
+              src="images/loader.svg"
+              alt="loading indicator"
+              class="loader"
+            />
+          </div>
+          <div v-if="error">{{error}}</div>
+          <div v-if="title" id="info-box" :key="title">
+            <h2><span class="label-2">Game: </span>{{title}}</h2>
+            <img :src="`images/${game_img}`" />
+
+            <p><span class="label-2">Genre: </span>{{genre}}</p>
+            <p><span class="label-2">Description: </span>{{description}}</p>
+            <p><span class="label-2">Release Year: </span>{{release_year}}</p>
+            <br /><br />
+
+            <h3><span class="label-2">Game Studio: </span>{{name}}</h3>
+            <img :src="`images/${studio_img}`" />
+            <p><span class="label-2">Head Quarters: </span>{{headquarters}}</p>
+            <p><span class="label-2">Founded Year: </span>{{founded_year}}</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

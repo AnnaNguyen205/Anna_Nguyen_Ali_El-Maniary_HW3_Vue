@@ -1,0 +1,151 @@
+@use "../abstracts" as a;
+@use "../abstracts/mixins" as m;
+
+// Base Styles
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: a.$primaryFont;
+  text-align: center;
+  font-weight: 600;
+  color: a.$primaryColor;
+}
+
+/* Mobile styles (default) */
+h1 {
+  font-size: 32px;
+  margin: 24px 0;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 20px 0;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 16px 0;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 20px;
+  margin: 14px 0;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 16px;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+p,
+li,
+a,
+button,
+input,
+label,
+textarea,
+select {
+  font-family: a.$secondaryFont;
+  font-size: 16px;
+  margin: 12px 0;
+  line-height: 1.6;
+  font-weight: 400;
+  color: a.$secondaryColor2;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 40px;
+    margin: 32px 0;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 32px;
+    margin: 28px 0;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 28px;
+    margin: 24px 0;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 24px;
+    margin: 20px 0;
+    line-height: 1.4;
+  }
+
+  h5 {
+    font-size: 20px;
+    margin: 16px 0;
+    line-height: 1.5;
+  }
+
+  p,
+  li,
+  a,
+  button,
+  input,
+  label,
+  textarea,
+  select {
+    font-size: 18px;
+    margin: 16px 0;
+    line-height: 1.6;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 48px;
+    margin: 40px 0;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 40px;
+    margin: 32px 0;
+    line-height: 1.2;
+  }
+
+  h3 {
+    font-size: 32px;
+    margin: 28px 0;
+    line-height: 1.3;
+  }
+
+  h4 {
+    font-size: 28px;
+    margin: 24px 0;
+    line-height: 1.4;
+  }
+
+  h5 {
+    font-size: 24px;
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+
+  p,
+  li,
+  a,
+  button,
+  input,
+  label,
+  textarea,
+  select {
+    font-size: 20px;
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+}
