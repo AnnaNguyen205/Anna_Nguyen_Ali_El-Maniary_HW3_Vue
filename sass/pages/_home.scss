@@ -1,0 +1,80 @@
+@use "../abstracts" as a;
+@use "../abstracts/mixins" as m;
+
+body {
+  padding: 0 40px;
+  background: a.$secondaryColor1;
+  color: a.$secondaryColor2;
+}
+
+h1 {
+  background-color: a.$primaryColor;
+  color: a.$secondaryColor1;
+  padding: 20px;
+  border-radius: 20px 20px 0 0;
+  margin: 40px 0 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.game-list {
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // gap: 40px 30px;
+  // border-top: 1px dashed #888;
+  // border-bottom: 1px dashed #888;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.game-item {
+  font-size: 16px;
+  color: #000;
+  border-top: 1px dashed #888;
+  border-bottom: 1px dashed #888;
+  margin-bottom: 3%;
+  padding-top: 3%;
+
+  .game-item-con {
+    background-color: rgba(128, 128, 128, 0.224);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.game-item > span {
+  color: #d8233c;
+  font-weight: bold;
+}
+
+.game-info {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.game-info img {
+  width: 70px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.label {
+  color: a.$accentColor;
+  font-weight: bold;
+}
+
+.label-2 {
+  color: a.$variationColor;
+  font-weight: bold;
+}
+
+#gameInfoCon {
+  border: 1px dashed a.$variationColor;
+  padding: 3%;
+}
